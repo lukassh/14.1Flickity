@@ -9,7 +9,7 @@
 <body>
 	<header><h1>Carousel </h1></header>
 
-	  	<p>View:
+	<p>View:
 	  <a href="#carousel-cell1">Cell 1</a>,
 	  <a href="#carousel-cell2">Cell 2</a>,
 	  <a href="#carousel-cell3">Cell 3</a>,
@@ -23,7 +23,8 @@
 	<div class="progress-bar"></div>
 	
 	<button class="restart">Back to 1</button>
-
+  
+  <div id="map"></div>
 
  <script id="carouselCellTemplate" type="x-tmpl-mustache">
       <div class="carousel-cell" id="carousel-cell{{id}}"> 
@@ -45,30 +46,36 @@
 				image: 'images/slide3.jpg',
 				title: 'Slide 1 ',
 				description: '<h2>- Description Lorem Ipsum Slide 1 </h2>',
+        coords: {lat: -38.488691, lng: 145.1505893},
         id: '1'
 			},
 			{
 				image: 'images/slide4.jpg',
 				title: 'Slide 2',
 				description: '<h2>- Description Lorem Ipsum Slide 2 </h2>',
+        coords: {lat: -38.727461, lng: 146.336704},
         id: '2'
+
 			},
 			{
 				image: 'images/slide3.jpg',
 				title: 'Slide 3',
 				description: '<h2>- Description Lorem Ipsum Slide 3 </h2>',
+        coords: {lat: -25.363, lng: 131.044},
         id: '3'
 			},
 			{
 				image: 'images/slide4.jpg',
 				title: 'Slide 4',
 				description: '<h2>- Description Lorem Ipsum Slide 4 </h2>',
+        coords: {lat: -38.3913632, lng: 146.9179315},
         id: '4'
 			},
 			{
 				image: 'images/slide5.jpg',
 				title: 'Slide 5',
 				description: '<h2>- Description Lorem Ipsum Slide 5 </h2>',
+        coords: {lat: -17.3306919, lng: 123.6406584},
         id: '5'
 			}
 
@@ -78,9 +85,11 @@
 
 	
 
+ 
 
   <script src="vendor/flickity.pkgd.min.js"></script>
   <script src="vendor/mustache.js"></script>
   <script type="text/javascript" src="js/script.js"></script>
+   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCJUTPydGAimC-c88u_WQ1kCTegpHY52eM&callback=initMap"></script> 
 </body>
 </html>
