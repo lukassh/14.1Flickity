@@ -55,10 +55,29 @@ window.initMap = function() {
  
   var marker = new google.maps.Marker({position: first, map: map});
 
-    for ( var i = 1; i < dataContainer.length; i++) {
- 
-  	var markers = 'var marker' + [i] + ' = ' + new google.maps.Marker({position: dataContainer[i].coords, map: map});
+  var markers = [];
+  for ( var i = 0; i < dataContainer.length; i++) {
+ 	
+ 	markers.push(new google.maps.Marker({
+        position: dataContainer[i].coords,
+        map: map,
+        id: i
+      }))
+     markers[i].addListener("click", function() {
+        flkty.select(this.id)
+      });
+	  
 
+	flkty.on('change', function(index) {
+  
+		index.preventDefault(index);
+				
+		map.panTo(dataContainer[index].coords);
+				
+		map.setZoom(10);
+
+	}); 
   } 
-
 }
+
+
