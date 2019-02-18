@@ -1,5 +1,20 @@
 'use strict';
 
+
+
+//Mustache.js
+
+var templateCarousel = document.getElementById("carouselCellTemplate").innerHTML;
+var carousel = document.querySelector(".main-carousel");
+var carouselSlides = "";
+
+for ( var i = 0; i < dataContainer.length; i++) {
+  carouselSlides += Mustache.render(templateCarousel, dataContainer[i]);
+  
+}
+
+carousel.innerHTML = carouselSlides;
+
 var elem = document.querySelector('.main-carousel');
 var flkty = new Flickity( elem, {
   // options
@@ -28,17 +43,3 @@ flkty.on('scroll', function(progress) {
   progress = Math.max( 0, Math.min( 1, progress ) );
   progressBar.style.width = progress * 100 + '%';
 });
-
-
-//Mustache.js
-
-var templateCarousel = document.getElementById("carouselCellTemplate").innerHTML;
-var carousel = document.querySelector(".main-carousel");
-var carouselSlides = "";
-
-for ( var i = 0; i < dataContainer.length; i++) {
-  carouselSlides += Mustache.render(templateCarousel, dataContainer[i]);
-  
-}
-
-carousel.innerHTML = carouselSlides;
