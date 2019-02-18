@@ -31,6 +31,15 @@
   color: #fff;
 }
 
+.main-carousel .carousel-cell .container h1 {
+  font-size: 36px;
+  color: tomato;
+}
+
+.main-carousel .carousel-cell .container h2 {
+  font-size: 30px;
+}
+
 .restart {
   position: absolute;
   width: 100px;
