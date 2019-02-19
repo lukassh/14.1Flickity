@@ -44,6 +44,9 @@ flkty.on('scroll', function(progress) {
   progressBar.style.width = progress * 100 + '%';
 });
 
+
+
+
 // Initialize and add the map
 window.initMap = function() {
   // The location of Uluru
@@ -64,20 +67,18 @@ window.initMap = function() {
         id: i
       }))
      markers[i].addListener("click", function() {
-        flkty.select(this.id)
-      });
-	  
+        flkty.select(this.id);
+      })
+  }
 
-	flkty.on('change', function(index) {
-  
-		index.preventDefault(index);
-				
-		map.panTo(dataContainer[index].coords);
-				
-		map.setZoom(10);
+  flkty.on('change', function(index) {
+	
+	console.log(index);	
+	var target = dataContainer[index].coords;
+	map.panTo(target);
 
-	}); 
-  } 
+}); 
+ 
 }
 
 
